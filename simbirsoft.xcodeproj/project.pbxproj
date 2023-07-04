@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3B181C06053307B4A5E016 /* Pods_simbirsoft_simbirsoftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FAC95D8846E00F55C5FCE6 /* Pods_simbirsoft_simbirsoftUITests.framework */; };
+		8A182319773CE42461C77B95 /* Pods_simbirsoftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */; };
+		9FEBF2643AD2FA4F33735AD6 /* Pods_simbirsoft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */; };
 		CF33AD2F2A50249D00564F9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD2E2A50249D00564F9E /* AppDelegate.swift */; };
 		CF33AD312A50249D00564F9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD302A50249D00564F9E /* SceneDelegate.swift */; };
-		CF33AD332A50249D00564F9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD322A50249D00564F9E /* ViewController.swift */; };
-		CF33AD362A50249D00564F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD342A50249D00564F9E /* Main.storyboard */; };
 		CF33AD392A50249D00564F9E /* simbirsoft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD372A50249D00564F9E /* simbirsoft.xcdatamodeld */; };
 		CF33AD3B2A50249E00564F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD3A2A50249E00564F9E /* Assets.xcassets */; };
-		CF33AD3E2A50249E00564F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD3C2A50249E00564F9E /* LaunchScreen.storyboard */; };
 		CF33AD492A50249F00564F9E /* simbirsoftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD482A50249F00564F9E /* simbirsoftTests.swift */; };
 		CF33AD532A50249F00564F9E /* simbirsoftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD522A50249F00564F9E /* simbirsoftUITests.swift */; };
 		CF33AD552A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD542A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift */; };
+		CF33AD632A5027DE00564F9E /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD622A5027DE00564F9E /* TaskListViewController.swift */; };
+		CF33AD652A5027E800564F9E /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD642A5027E800564F9E /* TaskListPresenter.swift */; };
+		CF33AD672A5027F100564F9E /* TaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD662A5027F100564F9E /* TaskListInteractor.swift */; };
+		CF33AD692A5027FF00564F9E /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD682A5027FF00564F9E /* TaskListRouter.swift */; };
+		CF33AD6B2A50288900564F9E /* TaskListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD6A2A50288900564F9E /* TaskListModuleBuilder.swift */; };
+		CF33AD6E2A502D7100564F9E /* TaskDetailModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD6D2A502D7100564F9E /* TaskDetailModuleBuilder.swift */; };
+		CF33AD702A502D7A00564F9E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD6F2A502D7A00564F9E /* TaskDetailViewController.swift */; };
+		CF33AD722A502D8100564F9E /* TaskDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD712A502D8100564F9E /* TaskDetailPresenter.swift */; };
+		CF33AD742A502D8900564F9E /* TaskDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD732A502D8900564F9E /* TaskDetailInteractor.swift */; };
+		CF33AD762A502D9900564F9E /* TaskDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD752A502D9900564F9E /* TaskDetailRouter.swift */; };
+		CF33AD7B2A502E1000564F9E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD7A2A502E1000564F9E /* Task.swift */; };
+		CF33AD7D2A503D4A00564F9E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD7C2A503D4A00564F9E /* TaskTableViewCell.swift */; };
+		CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD7F2A503F7F00564F9E /* NetworkService.swift */; };
+		CFAB9B2B2A52C1DF00F36836 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */; };
+		CFAB9B2D2A52D41C00F36836 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD7E2A503E3F00564F9E /* tasks.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,20 +52,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C66A7C1F7B3F46F6C4F321 /* Pods-simbirsoft-simbirsoftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoft-simbirsoftUITests.debug.xcconfig"; path = "Target Support Files/Pods-simbirsoft-simbirsoftUITests/Pods-simbirsoft-simbirsoftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		27FAC95D8846E00F55C5FCE6 /* Pods_simbirsoft_simbirsoftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoft_simbirsoftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C54BDD4ABEEBEFA9FA74D8F /* Pods-simbirsoft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoft.debug.xcconfig"; path = "Target Support Files/Pods-simbirsoft/Pods-simbirsoft.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1996AD62E0E11A07262B45 /* Pods-simbirsoft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoft.release.xcconfig"; path = "Target Support Files/Pods-simbirsoft/Pods-simbirsoft.release.xcconfig"; sourceTree = "<group>"; };
+		558FB4B9FFD3B365359C0FEF /* Pods-simbirsoftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoftTests.debug.xcconfig"; path = "Target Support Files/Pods-simbirsoftTests/Pods-simbirsoftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F775D27583C3E8A5ED7B8D6 /* Pods-simbirsoft-simbirsoftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoft-simbirsoftUITests.release.xcconfig"; path = "Target Support Files/Pods-simbirsoft-simbirsoftUITests/Pods-simbirsoft-simbirsoftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CF33AD2B2A50249D00564F9E /* simbirsoft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simbirsoft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF33AD2E2A50249D00564F9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF33AD302A50249D00564F9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF33AD322A50249D00564F9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF33AD352A50249D00564F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF33AD382A50249D00564F9E /* simbirsoft.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simbirsoft.xcdatamodel; sourceTree = "<group>"; };
 		CF33AD3A2A50249E00564F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF33AD3D2A50249E00564F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF33AD3F2A50249E00564F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF33AD442A50249F00564F9E /* simbirsoftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simbirsoftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF33AD482A50249F00564F9E /* simbirsoftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftTests.swift; sourceTree = "<group>"; };
 		CF33AD4E2A50249F00564F9E /* simbirsoftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simbirsoftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF33AD522A50249F00564F9E /* simbirsoftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftUITests.swift; sourceTree = "<group>"; };
 		CF33AD542A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF33AD622A5027DE00564F9E /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		CF33AD642A5027E800564F9E /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
+		CF33AD662A5027F100564F9E /* TaskListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractor.swift; sourceTree = "<group>"; };
+		CF33AD682A5027FF00564F9E /* TaskListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
+		CF33AD6A2A50288900564F9E /* TaskListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModuleBuilder.swift; sourceTree = "<group>"; };
+		CF33AD6D2A502D7100564F9E /* TaskDetailModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailModuleBuilder.swift; sourceTree = "<group>"; };
+		CF33AD6F2A502D7A00564F9E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		CF33AD712A502D8100564F9E /* TaskDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailPresenter.swift; sourceTree = "<group>"; };
+		CF33AD732A502D8900564F9E /* TaskDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailInteractor.swift; sourceTree = "<group>"; };
+		CF33AD752A502D9900564F9E /* TaskDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailRouter.swift; sourceTree = "<group>"; };
+		CF33AD7A2A502E1000564F9E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CF33AD7C2A503D4A00564F9E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		CF33AD7E2A503E3F00564F9E /* tasks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
+		CF33AD7F2A503F7F00564F9E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoftTests.release.xcconfig"; path = "Target Support Files/Pods-simbirsoftTests/Pods-simbirsoftTests.release.xcconfig"; sourceTree = "<group>"; };
+		E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEBF2643AD2FA4F33735AD6 /* Pods_simbirsoft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A182319773CE42461C77B95 /* Pods_simbirsoftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +110,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3B181C06053307B4A5E016 /* Pods_simbirsoft_simbirsoftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		196D641AED87EFF923B4871B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */,
+				27FAC95D8846E00F55C5FCE6 /* Pods_simbirsoft_simbirsoftUITests.framework */,
+				D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C69F54904003DFB533D62C7F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C54BDD4ABEEBEFA9FA74D8F /* Pods-simbirsoft.debug.xcconfig */,
+				4B1996AD62E0E11A07262B45 /* Pods-simbirsoft.release.xcconfig */,
+				01C66A7C1F7B3F46F6C4F321 /* Pods-simbirsoft-simbirsoftUITests.debug.xcconfig */,
+				5F775D27583C3E8A5ED7B8D6 /* Pods-simbirsoft-simbirsoftUITests.release.xcconfig */,
+				558FB4B9FFD3B365359C0FEF /* Pods-simbirsoftTests.debug.xcconfig */,
+				DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CF33AD222A50249D00564F9E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +147,8 @@
 				CF33AD472A50249F00564F9E /* simbirsoftTests */,
 				CF33AD512A50249F00564F9E /* simbirsoftUITests */,
 				CF33AD2C2A50249D00564F9E /* Products */,
+				C69F54904003DFB533D62C7F /* Pods */,
+				196D641AED87EFF923B4871B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,12 +165,13 @@
 		CF33AD2D2A50249D00564F9E /* simbirsoft */ = {
 			isa = PBXGroup;
 			children = (
-				CF33AD2E2A50249D00564F9E /* AppDelegate.swift */,
-				CF33AD302A50249D00564F9E /* SceneDelegate.swift */,
-				CF33AD322A50249D00564F9E /* ViewController.swift */,
-				CF33AD342A50249D00564F9E /* Main.storyboard */,
+				CF33AD7E2A503E3F00564F9E /* tasks.json */,
+				CF33AD792A502DD800564F9E /* Resources */,
+				CF33AD782A502DD000564F9E /* Services */,
+				CF33AD772A502DC400564F9E /* Entity */,
+				CF33AD6C2A502D5D00564F9E /* TaskDetailModule */,
+				CF33AD612A50263600564F9E /* TaskListModule */,
 				CF33AD3A2A50249E00564F9E /* Assets.xcassets */,
-				CF33AD3C2A50249E00564F9E /* LaunchScreen.storyboard */,
 				CF33AD3F2A50249E00564F9E /* Info.plist */,
 				CF33AD372A50249D00564F9E /* simbirsoft.xcdatamodeld */,
 			);
@@ -130,6 +195,65 @@
 			path = simbirsoftUITests;
 			sourceTree = "<group>";
 		};
+		CF33AD612A50263600564F9E /* TaskListModule */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B2C2A52C1FF00F36836 /* Cell */,
+				CF33AD622A5027DE00564F9E /* TaskListViewController.swift */,
+				CF33AD642A5027E800564F9E /* TaskListPresenter.swift */,
+				CF33AD662A5027F100564F9E /* TaskListInteractor.swift */,
+				CF33AD682A5027FF00564F9E /* TaskListRouter.swift */,
+				CF33AD6A2A50288900564F9E /* TaskListModuleBuilder.swift */,
+			);
+			path = TaskListModule;
+			sourceTree = "<group>";
+		};
+		CF33AD6C2A502D5D00564F9E /* TaskDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD6D2A502D7100564F9E /* TaskDetailModuleBuilder.swift */,
+				CF33AD6F2A502D7A00564F9E /* TaskDetailViewController.swift */,
+				CF33AD712A502D8100564F9E /* TaskDetailPresenter.swift */,
+				CF33AD732A502D8900564F9E /* TaskDetailInteractor.swift */,
+				CF33AD752A502D9900564F9E /* TaskDetailRouter.swift */,
+			);
+			path = TaskDetailModule;
+			sourceTree = "<group>";
+		};
+		CF33AD772A502DC400564F9E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD7A2A502E1000564F9E /* Task.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CF33AD782A502DD000564F9E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD7F2A503F7F00564F9E /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF33AD792A502DD800564F9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD2E2A50249D00564F9E /* AppDelegate.swift */,
+				CF33AD302A50249D00564F9E /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CFAB9B2C2A52C1FF00F36836 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD7C2A503D4A00564F9E /* TaskTableViewCell.swift */,
+				CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF33AD582A50249F00564F9E /* Build configuration list for PBXNativeTarget "simbirsoft" */;
 			buildPhases = (
+				14897BAE546BA6E40F4B8013 /* [CP] Check Pods Manifest.lock */,
 				CF33AD272A50249D00564F9E /* Sources */,
 				CF33AD282A50249D00564F9E /* Frameworks */,
 				CF33AD292A50249D00564F9E /* Resources */,
+				2A2AB06E73F38AD0F3F07B70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF33AD5B2A50249F00564F9E /* Build configuration list for PBXNativeTarget "simbirsoftTests" */;
 			buildPhases = (
+				3833F36F8AF947C076B91FF8 /* [CP] Check Pods Manifest.lock */,
 				CF33AD402A50249F00564F9E /* Sources */,
 				CF33AD412A50249F00564F9E /* Frameworks */,
 				CF33AD422A50249F00564F9E /* Resources */,
@@ -172,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF33AD5E2A50249F00564F9E /* Build configuration list for PBXNativeTarget "simbirsoftUITests" */;
 			buildPhases = (
+				85DD12B1B5BAD4E55AF8CC5E /* [CP] Check Pods Manifest.lock */,
 				CF33AD4A2A50249F00564F9E /* Sources */,
 				CF33AD4B2A50249F00564F9E /* Frameworks */,
 				CF33AD4C2A50249F00564F9E /* Resources */,
+				C2D9E79DBADD3FE4264ACC9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +363,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF33AD3E2A50249E00564F9E /* LaunchScreen.storyboard in Resources */,
+				CFAB9B2D2A52D41C00F36836 /* tasks.json in Resources */,
 				CF33AD3B2A50249E00564F9E /* Assets.xcassets in Resources */,
-				CF33AD362A50249D00564F9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +384,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14897BAE546BA6E40F4B8013 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-simbirsoft-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A2AB06E73F38AD0F3F07B70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simbirsoft/Pods-simbirsoft-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simbirsoft/Pods-simbirsoft-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-simbirsoft/Pods-simbirsoft-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3833F36F8AF947C076B91FF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-simbirsoftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85DD12B1B5BAD4E55AF8CC5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-simbirsoft-simbirsoftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2D9E79DBADD3FE4264ACC9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simbirsoft-simbirsoftUITests/Pods-simbirsoft-simbirsoftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simbirsoft-simbirsoftUITests/Pods-simbirsoft-simbirsoftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-simbirsoft-simbirsoftUITests/Pods-simbirsoft-simbirsoftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF33AD272A50249D00564F9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF33AD332A50249D00564F9E /* ViewController.swift in Sources */,
 				CF33AD392A50249D00564F9E /* simbirsoft.xcdatamodeld in Sources */,
 				CF33AD2F2A50249D00564F9E /* AppDelegate.swift in Sources */,
+				CF33AD7D2A503D4A00564F9E /* TaskTableViewCell.swift in Sources */,
+				CF33AD6B2A50288900564F9E /* TaskListModuleBuilder.swift in Sources */,
 				CF33AD312A50249D00564F9E /* SceneDelegate.swift in Sources */,
+				CF33AD762A502D9900564F9E /* TaskDetailRouter.swift in Sources */,
+				CF33AD702A502D7A00564F9E /* TaskDetailViewController.swift in Sources */,
+				CF33AD6E2A502D7100564F9E /* TaskDetailModuleBuilder.swift in Sources */,
+				CF33AD742A502D8900564F9E /* TaskDetailInteractor.swift in Sources */,
+				CF33AD632A5027DE00564F9E /* TaskListViewController.swift in Sources */,
+				CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */,
+				CF33AD652A5027E800564F9E /* TaskListPresenter.swift in Sources */,
+				CF33AD722A502D8100564F9E /* TaskDetailPresenter.swift in Sources */,
+				CF33AD672A5027F100564F9E /* TaskListInteractor.swift in Sources */,
+				CFAB9B2B2A52C1DF00F36836 /* EmptyTableViewCell.swift in Sources */,
+				CF33AD7B2A502E1000564F9E /* Task.swift in Sources */,
+				CF33AD692A5027FF00564F9E /* TaskListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,25 +543,6 @@
 			targetProxy = CF33AD4F2A50249F00564F9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CF33AD342A50249D00564F9E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF33AD352A50249D00564F9E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CF33AD3C2A50249E00564F9E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF33AD3D2A50249E00564F9E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CF33AD562A50249F00564F9E /* Debug */ = {
@@ -436,6 +661,7 @@
 		};
 		CF33AD592A50249F00564F9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C54BDD4ABEEBEFA9FA74D8F /* Pods-simbirsoft.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -446,9 +672,9 @@
 				INFOPLIST_FILE = simbirsoft/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +690,7 @@
 		};
 		CF33AD5A2A50249F00564F9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B1996AD62E0E11A07262B45 /* Pods-simbirsoft.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,9 +701,9 @@
 				INFOPLIST_FILE = simbirsoft/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,6 +719,7 @@
 		};
 		CF33AD5C2A50249F00564F9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 558FB4B9FFD3B365359C0FEF /* Pods-simbirsoftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +740,7 @@
 		};
 		CF33AD5D2A50249F00564F9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +761,7 @@
 		};
 		CF33AD5F2A50249F00564F9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C66A7C1F7B3F46F6C4F321 /* Pods-simbirsoft-simbirsoftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +780,7 @@
 		};
 		CF33AD602A50249F00564F9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F775D27583C3E8A5ED7B8D6 /* Pods-simbirsoft-simbirsoftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
