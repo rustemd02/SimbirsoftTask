@@ -9,13 +9,14 @@ import Foundation
 
 protocol TaskListPresenterProtocol: AnyObject {
     func getDateString(date: Date) -> String
-    func formatToTimeInterval(row: String) -> String
+    func formatRowToTime(row: String) -> String
     func getTaskByHour(indexpath: IndexPath) -> Task?
     func getTasksForSelectedDay(selectedDate: Date) -> [Task]
+    
+    func presentDetailView(task: Task)
 }
 
 class TaskListPresenter {
-    
     weak var view: TaskListViewControllerProtocol?
     let router: TaskListRouterProtocol
     let interactor: TaskListInteractorProtocol
@@ -36,14 +37,17 @@ extension TaskListPresenter: TaskListPresenterProtocol {
         return interactor.getTaskByHour(indexpath: indexpath)
     }
     
-    func formatToTimeInterval(row: String) -> String {
-        return interactor.formatToTimeInterval(row: row)
+    func formatRowToTime(row: String) -> String {
+        return interactor.formatRowToTime(row: row)
     }
     
     func getTasksForSelectedDay(selectedDate: Date) -> [Task] {
         return interactor.getTasksForSelectedDay(selectedDate: selectedDate)
     }
     
+    func presentDetailView(task: Task) {
+        router.presentDetailView(task: task)
+    }
     
     
     

@@ -42,11 +42,11 @@ class TaskTableViewCell: UITableViewCell {
             make.bottomMargin.equalToSuperview().offset(-10)
         }
         
-        taskTitle.font = .systemFont(ofSize: 20, weight: .semibold)
+        taskTitle.font = .systemFont(ofSize: 15, weight: .semibold)
         taskTitle.textAlignment = .right
         taskTitle.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalTo(contentView.snp.trailing).inset(15)
+            make.trailing.equalTo(contentView.snp.trailingMargin).inset(15)
             make.leading.greaterThanOrEqualTo(timeStartLabel.snp.trailing).offset(15)
         }
 

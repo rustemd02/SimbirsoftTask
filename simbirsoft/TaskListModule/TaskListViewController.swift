@@ -41,6 +41,7 @@ class TaskListViewController: UIViewController {
         tasksTableView.estimatedRowHeight = 80
         tasksTableView.rowHeight = UITableView.automaticDimension
         tasksTableView.dataSource = self
+        tasksTableView.delegate = self
         _ = presenter?.getTasksForSelectedDay(selectedDate: .init())
         view.addSubview(tasksTableView)
         tasksTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "TaskTableViewCell")
@@ -106,7 +107,7 @@ extension TaskListViewController: TaskListViewControllerProtocol {
     
 }
 
-extension TaskListViewController: UITableViewDataSource {
+extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 24
     }
@@ -116,11 +117,13 @@ extension TaskListViewController: UITableViewDataSource {
             let cell = tasksTableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as? TaskTableViewCell
             guard let cell = cell else { return .init() }
             cell.taskTitle.text = task.name
-            cell.timeStartLabel.text = presenter?.formatToTimeInterval(row: indexPath.row.description)
+            cell.timeStartLabel.text = presenter?.formatRowToTime(row: indexPath.row.description)
             if indexPath.row % 2 == 0 {
                 cell.backgroundColor = #colorLiteral(red: 1, green: 0.9145376682, blue: 0.9278103709, alpha: 1)
+                cell.selectedBackgroundView?.backgroundColor = #colorLiteral(red: 1, green: 0.8799344897, blue: 0.8916209936, alpha: 1)
             } else {
                 cell.backgroundColor = #colorLiteral(red: 1, green: 0.8799344897, blue: 0.8916209936, alpha: 1)
+                cell.selectedBackgroundView?.backgroundColor = #colorLiteral(red: 1, green: 0.9145376682, blue: 0.9278103709, alpha: 1)
             }
             tableView.reloadRows(at: [indexPath], with: .automatic)
             return cell
@@ -129,9 +132,15 @@ extension TaskListViewController: UITableViewDataSource {
         let cell = tasksTableView.dequeueReusableCell(withIdentifier: "EmptyTableViewCell", for: indexPath) as? EmptyTableViewCell
         guard let cell = cell else { return .init() }
         cell.selectionStyle = .none
-        cell.timeLabel.text = presenter?.formatToTimeInterval(row: indexPath.row.description)
+        cell.timeLabel.text = presenter?.formatRowToTime(row: indexPath.row.description)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let task = presenter?.getTaskByHour(indexpath: indexPath) {
+            presenter?.presentDetailView(task: task)
+        }
+    }
+        
     
 }

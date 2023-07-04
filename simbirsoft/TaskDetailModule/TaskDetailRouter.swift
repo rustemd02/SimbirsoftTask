@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol TaskDetailRouterProtocol: AnyObject {
+    
+}
+
+class TaskDetailRouter: TaskDetailRouterProtocol {
+    weak var view: TaskDetailViewControllerProtocol?
+}

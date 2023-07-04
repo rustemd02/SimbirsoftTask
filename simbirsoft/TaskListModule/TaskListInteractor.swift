@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TaskListInteractorProtocol: AnyObject {
-    func formatToTimeInterval(row: String) -> String
+    func formatRowToTime(row: String) -> String
     func getTaskByHour(indexpath: IndexPath) -> Task?
     func getTasksForSelectedDay(selectedDate: Date) -> [Task]
     func getDateString(date: Date) -> String
@@ -37,7 +37,7 @@ extension TaskListInteractor: TaskListInteractorProtocol {
         return ""
     }
     
-    func formatToTimeInterval(row: String) -> String {
+    func formatRowToTime(row: String) -> String {
         var editedPart = row
         if editedPart.count == 1 {
             editedPart.insert("0", at: editedPart.startIndex)
@@ -57,7 +57,7 @@ extension TaskListInteractor: TaskListInteractorProtocol {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         //dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        guard let date = dateFormatter.date(from: formatToTimeInterval(row: indexpath.row.description)) else { return nil }
+        guard let date = dateFormatter.date(from: formatRowToTime(row: indexpath.row.description)) else { return nil }
         let currentHour = calendar.component(.hour, from: date)
         for task in tasksForSelectedDay {
             guard let startDate = task.startDate, let finishDate = task.finishDate else { return nil }
