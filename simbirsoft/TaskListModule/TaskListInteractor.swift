@@ -11,6 +11,7 @@ protocol TaskListInteractorProtocol: AnyObject {
     func formatToTimeInterval(row: String) -> String
     func getTaskByHour(indexpath: IndexPath) -> Task?
     func getTasksForSelectedDay(selectedDate: Date) -> [Task]
+    func getDateString(date: Date) -> String
 }
 
 class TaskListInteractor {
@@ -22,6 +23,20 @@ class TaskListInteractor {
 }
 
 extension TaskListInteractor: TaskListInteractorProtocol {
+    func getDateString(date: Date) -> String {
+        let regex = try! NSRegularExpression(pattern: "\\d{4}")
+        let dateString = date.description(with: Locale(identifier: "ru_RU"))
+        let matches = regex.matches(in: dateString, range: NSRange(location: 0, length: dateString.count))
+
+        if let match = matches.first {
+            let range = match.range
+            var substring = (dateString as NSString).substring(to: range.location)
+            substring = substring.trimmingCharacters(in: .whitespacesAndNewlines)
+            return substring
+        }
+        return ""
+    }
+    
     func formatToTimeInterval(row: String) -> String {
         var editedPart = row
         if editedPart.count == 1 {

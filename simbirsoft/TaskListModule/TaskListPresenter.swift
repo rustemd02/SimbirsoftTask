@@ -8,6 +8,7 @@
 import Foundation
 
 protocol TaskListPresenterProtocol: AnyObject {
+    func getDateString(date: Date) -> String
     func formatToTimeInterval(row: String) -> String
     func getTaskByHour(indexpath: IndexPath) -> Task?
     func getTasksForSelectedDay(selectedDate: Date) -> [Task]
@@ -27,6 +28,10 @@ class TaskListPresenter {
 }
 
 extension TaskListPresenter: TaskListPresenterProtocol {
+    func getDateString(date: Date) -> String {
+        return interactor.getDateString(date: date)
+    }
+    
     func getTaskByHour(indexpath: IndexPath) -> Task? {
         return interactor.getTaskByHour(indexpath: indexpath)
     }
