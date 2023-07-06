@@ -32,7 +32,12 @@
 		CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD7F2A503F7F00564F9E /* NetworkService.swift */; };
 		CFAB9B2B2A52C1DF00F36836 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */; };
 		CFAB9B2D2A52D41C00F36836 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD7E2A503E3F00564F9E /* tasks.json */; };
-		CFAB9B2F2A549AC500F36836 /* HalfHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */; };
+		CFAB9B3A2A56C61500F36836 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B392A56C61500F36836 /* NewTaskViewController.swift */; };
+		CFAB9B3C2A56C63400F36836 /* NewTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B3B2A56C63400F36836 /* NewTaskPresenter.swift */; };
+		CFAB9B3E2A56C63C00F36836 /* NewTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B3D2A56C63C00F36836 /* NewTaskInteractor.swift */; };
+		CFAB9B402A56C64400F36836 /* NewTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B3F2A56C64400F36836 /* NewTaskRouter.swift */; };
+		CFAB9B422A56C64C00F36836 /* NewTaskModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B412A56C64C00F36836 /* NewTaskModuleBuilder.swift */; };
+		CFAB9B442A56FB0E00F36836 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B432A56FB0E00F36836 /* DatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +90,12 @@
 		CF33AD7E2A503E3F00564F9E /* tasks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
 		CF33AD7F2A503F7F00564F9E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
-		CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfHourTableViewCell.swift; sourceTree = "<group>"; };
+		CFAB9B392A56C61500F36836 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		CFAB9B3B2A56C63400F36836 /* NewTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskPresenter.swift; sourceTree = "<group>"; };
+		CFAB9B3D2A56C63C00F36836 /* NewTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskInteractor.swift; sourceTree = "<group>"; };
+		CFAB9B3F2A56C64400F36836 /* NewTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskRouter.swift; sourceTree = "<group>"; };
+		CFAB9B412A56C64C00F36836 /* NewTaskModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModuleBuilder.swift; sourceTree = "<group>"; };
+		CFAB9B432A56FB0E00F36836 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoftTests.release.xcconfig"; path = "Target Support Files/Pods-simbirsoftTests/Pods-simbirsoftTests.release.xcconfig"; sourceTree = "<group>"; };
 		E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +177,7 @@
 		CF33AD2D2A50249D00564F9E /* simbirsoft */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB9B382A56C5F900F36836 /* NewTaskModule */,
 				CF33AD7E2A503E3F00564F9E /* tasks.json */,
 				CF33AD792A502DD800564F9E /* Resources */,
 				CF33AD782A502DD000564F9E /* Services */,
@@ -200,11 +211,11 @@
 		CF33AD612A50263600564F9E /* TaskListModule */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB9B332A56C54C00F36836 /* Router */,
+				CFAB9B322A56C54400F36836 /* Interactor */,
+				CFAB9B312A56C53C00F36836 /* Presenter */,
+				CFAB9B302A56C53100F36836 /* ViewController */,
 				CFAB9B2C2A52C1FF00F36836 /* Cell */,
-				CF33AD622A5027DE00564F9E /* TaskListViewController.swift */,
-				CF33AD642A5027E800564F9E /* TaskListPresenter.swift */,
-				CF33AD662A5027F100564F9E /* TaskListInteractor.swift */,
-				CF33AD682A5027FF00564F9E /* TaskListRouter.swift */,
 				CF33AD6A2A50288900564F9E /* TaskListModuleBuilder.swift */,
 			);
 			path = TaskListModule;
@@ -213,11 +224,11 @@
 		CF33AD6C2A502D5D00564F9E /* TaskDetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				CFAB9B372A56C57900F36836 /* Router */,
+				CFAB9B362A56C56F00F36836 /* Presenter */,
+				CFAB9B352A56C56600F36836 /* Interactor */,
+				CFAB9B342A56C55D00F36836 /* ViewController */,
 				CF33AD6D2A502D7100564F9E /* TaskDetailModuleBuilder.swift */,
-				CF33AD6F2A502D7A00564F9E /* TaskDetailViewController.swift */,
-				CF33AD712A502D8100564F9E /* TaskDetailPresenter.swift */,
-				CF33AD732A502D8900564F9E /* TaskDetailInteractor.swift */,
-				CF33AD752A502D9900564F9E /* TaskDetailRouter.swift */,
 			);
 			path = TaskDetailModule;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				CF33AD7F2A503F7F00564F9E /* NetworkService.swift */,
+				CFAB9B432A56FB0E00F36836 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -252,9 +264,116 @@
 			children = (
 				CF33AD7C2A503D4A00564F9E /* TaskTableViewCell.swift */,
 				CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */,
-				CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CFAB9B302A56C53100F36836 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD622A5027DE00564F9E /* TaskListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAB9B312A56C53C00F36836 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD642A5027E800564F9E /* TaskListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CFAB9B322A56C54400F36836 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD662A5027F100564F9E /* TaskListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CFAB9B332A56C54C00F36836 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD682A5027FF00564F9E /* TaskListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CFAB9B342A56C55D00F36836 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD6F2A502D7A00564F9E /* TaskDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAB9B352A56C56600F36836 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD732A502D8900564F9E /* TaskDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CFAB9B362A56C56F00F36836 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD712A502D8100564F9E /* TaskDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CFAB9B372A56C57900F36836 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CF33AD752A502D9900564F9E /* TaskDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CFAB9B382A56C5F900F36836 /* NewTaskModule */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B482A57050B00F36836 /* Router */,
+				CFAB9B472A57050500F36836 /* Interactor */,
+				CFAB9B462A5704FF00F36836 /* Presenter */,
+				CFAB9B452A5704F700F36836 /* ViewController */,
+				CFAB9B412A56C64C00F36836 /* NewTaskModuleBuilder.swift */,
+			);
+			path = NewTaskModule;
+			sourceTree = "<group>";
+		};
+		CFAB9B452A5704F700F36836 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B392A56C61500F36836 /* NewTaskViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CFAB9B462A5704FF00F36836 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B3B2A56C63400F36836 /* NewTaskPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CFAB9B472A57050500F36836 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B3D2A56C63C00F36836 /* NewTaskInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CFAB9B482A57050B00F36836 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CFAB9B3F2A56C64400F36836 /* NewTaskRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,21 +615,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF33AD392A50249D00564F9E /* simbirsoft.xcdatamodeld in Sources */,
+				CFAB9B402A56C64400F36836 /* NewTaskRouter.swift in Sources */,
 				CF33AD2F2A50249D00564F9E /* AppDelegate.swift in Sources */,
 				CF33AD7D2A503D4A00564F9E /* TaskTableViewCell.swift in Sources */,
 				CF33AD6B2A50288900564F9E /* TaskListModuleBuilder.swift in Sources */,
+				CFAB9B422A56C64C00F36836 /* NewTaskModuleBuilder.swift in Sources */,
 				CF33AD312A50249D00564F9E /* SceneDelegate.swift in Sources */,
 				CF33AD762A502D9900564F9E /* TaskDetailRouter.swift in Sources */,
+				CFAB9B3E2A56C63C00F36836 /* NewTaskInteractor.swift in Sources */,
 				CF33AD702A502D7A00564F9E /* TaskDetailViewController.swift in Sources */,
 				CF33AD6E2A502D7100564F9E /* TaskDetailModuleBuilder.swift in Sources */,
 				CF33AD742A502D8900564F9E /* TaskDetailInteractor.swift in Sources */,
 				CF33AD632A5027DE00564F9E /* TaskListViewController.swift in Sources */,
-				CFAB9B2F2A549AC500F36836 /* HalfHourTableViewCell.swift in Sources */,
 				CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */,
 				CF33AD652A5027E800564F9E /* TaskListPresenter.swift in Sources */,
 				CF33AD722A502D8100564F9E /* TaskDetailPresenter.swift in Sources */,
 				CF33AD672A5027F100564F9E /* TaskListInteractor.swift in Sources */,
 				CFAB9B2B2A52C1DF00F36836 /* EmptyTableViewCell.swift in Sources */,
+				CFAB9B442A56FB0E00F36836 /* DatabaseService.swift in Sources */,
+				CFAB9B3C2A56C63400F36836 /* NewTaskPresenter.swift in Sources */,
+				CFAB9B3A2A56C61500F36836 /* NewTaskViewController.swift in Sources */,
 				CF33AD7B2A502E1000564F9E /* Task.swift in Sources */,
 				CF33AD692A5027FF00564F9E /* TaskListRouter.swift in Sources */,
 			);

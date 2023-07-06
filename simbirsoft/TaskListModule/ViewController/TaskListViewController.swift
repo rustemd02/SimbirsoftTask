@@ -22,19 +22,20 @@ class TaskListViewController: UIViewController {
     let datePicker = UIDatePicker()
     let toolbar = UIToolbar()
     let datePickerBackgroundView = UIView()
+    
+    var selectedDate = Date.init()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dateTitle = presenter?.getDateString(date: Date.init())
+        let dateTitle = presenter?.getDateString(date: selectedDate)
         navigationItem.titleView?.isUserInteractionEnabled = true
         
         dateButton.setTitle(dateTitle, for: .normal)
         dateButton.addTarget(self, action: #selector(openCalendarMenu), for: .touchUpInside)
         navigationItem.titleView = dateButton
-        //let calendarButton = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain, target: self, action: #selector(openCalendarMenu))
+        let newTaskButton = UIBarButtonItem(image: UIImage(named: "calendar.badge.plus"), style: .plain, target: self, action: #selector(openNewTaskMenu))
+        navigationItem.rightBarButtonItem = newTaskButton
         tableViewSetup()
-
-
     }
   
     func tableViewSetup() {
@@ -42,13 +43,18 @@ class TaskListViewController: UIViewController {
         tasksTableView.rowHeight = UITableView.automaticDimension
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-        _ = presenter?.getTasksForSelectedDay(selectedDate: .init())
+        _ = presenter?.getTasksForSelectedDay(selectedDate: self.selectedDate)
         view.addSubview(tasksTableView)
         tasksTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "TaskTableViewCell")
         tasksTableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: "EmptyTableViewCell")
         tasksTableView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
         }
+    }
+    
+    @objc
+    func openNewTaskMenu() {
+        presenter?.presentNewTaskView(for: selectedDate)
     }
     
     @objc
@@ -93,6 +99,7 @@ class TaskListViewController: UIViewController {
     func updateTableView() {
         datePicker.removeFromSuperview()
         toolbar.removeFromSuperview()
+        selectedDate = datePicker.date
         _ = presenter?.getTasksForSelectedDay(selectedDate: datePicker.date)
         let dateTitle = presenter?.getDateString(date: datePicker.date)
         dateButton.setTitle(dateTitle, for: .normal)

@@ -14,6 +14,7 @@ protocol TaskListPresenterProtocol: AnyObject {
     func getTasksForSelectedDay(selectedDate: Date) -> [Task]
     
     func presentDetailView(task: Task)
+    func presentNewTaskView(for date: Date)
 }
 
 class TaskListPresenter {
@@ -29,6 +30,10 @@ class TaskListPresenter {
 }
 
 extension TaskListPresenter: TaskListPresenterProtocol {
+    func presentNewTaskView(for date: Date) {
+        router.createNewTask(for: date)
+    }
+    
     func getDateString(date: Date) -> String {
         return interactor.getDateString(date: date)
     }

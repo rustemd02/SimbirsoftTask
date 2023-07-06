@@ -9,6 +9,7 @@ import Foundation
 
 protocol TaskListRouterProtocol: AnyObject {
     func presentDetailView(task: Task)
+    func createNewTask(for date: Date)
 }
 
 class TaskListRouter: TaskListRouterProtocol {
@@ -18,5 +19,11 @@ class TaskListRouter: TaskListRouterProtocol {
         let vc = TaskDetailModuleBuilder.build()
         vc.task = task
         view?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func createNewTask(for date: Date) {
+        let vc = NewTaskModuleBuilder.build()
+        vc.date = date
+        view?.present(vc, animated: true)
     }
 }
