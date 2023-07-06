@@ -13,7 +13,7 @@ struct ResponseData: Decodable {
 
 struct Task: Codable {
     let id: Int
-    let dateStart, dateFinish: String
+    let dateStart, dateFinish: TimeInterval
     let name, description: String
 
     enum CodingKeys: String, CodingKey {
@@ -27,26 +27,16 @@ struct Task: Codable {
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         description = try container.decode(String.self, forKey: .description)
-        dateStart = try container.decode(String.self, forKey: .dateStart)
-        dateFinish = try container.decode(String.self, forKey: .dateFinish)
-    }
-    
-    func convertToDate(unixDate: TimeInterval) -> Date? {
-        return Date(timeIntervalSince1970: unixDate)
+        dateStart = try container.decode(TimeInterval.self, forKey: .dateStart)
+        dateFinish = try container.decode(TimeInterval.self, forKey: .dateFinish)
     }
     
     var startDate: Date? {
-        if let unixTimestamp = Double(dateStart) {
-            return convertToDate(unixDate: unixTimestamp)
-        }
-        return nil
+        return Date(timeIntervalSince1970: dateStart)
     }
     
     var finishDate: Date? {
-        if let unixTimestamp = Double(dateFinish) {
-            return convertToDate(unixDate: unixTimestamp)
-        }
-        return nil
+        return Date(timeIntervalSince1970: dateFinish)
     }
 }
 
@@ -55,6 +45,7 @@ func loadJson(filename fileName: String) -> [Task]? {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
             let jsonData = try decoder.decode(ResponseData.self, from: data)
             return jsonData.task
         } catch {
@@ -63,3 +54,4 @@ func loadJson(filename fileName: String) -> [Task]? {
     }
     return nil
 }
+

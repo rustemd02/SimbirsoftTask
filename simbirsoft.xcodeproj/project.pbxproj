@@ -32,6 +32,7 @@
 		CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD7F2A503F7F00564F9E /* NetworkService.swift */; };
 		CFAB9B2B2A52C1DF00F36836 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */; };
 		CFAB9B2D2A52D41C00F36836 /* tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD7E2A503E3F00564F9E /* tasks.json */; };
+		CFAB9B2F2A549AC500F36836 /* HalfHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		CF33AD7E2A503E3F00564F9E /* tasks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tasks.json; sourceTree = "<group>"; };
 		CF33AD7F2A503F7F00564F9E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfHourTableViewCell.swift; sourceTree = "<group>"; };
 		D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoftTests.release.xcconfig"; path = "Target Support Files/Pods-simbirsoftTests/Pods-simbirsoftTests.release.xcconfig"; sourceTree = "<group>"; };
 		E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +252,7 @@
 			children = (
 				CF33AD7C2A503D4A00564F9E /* TaskTableViewCell.swift */,
 				CFAB9B2A2A52C1DF00F36836 /* EmptyTableViewCell.swift */,
+				CFAB9B2E2A549AC500F36836 /* HalfHourTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				CF33AD6E2A502D7100564F9E /* TaskDetailModuleBuilder.swift in Sources */,
 				CF33AD742A502D8900564F9E /* TaskDetailInteractor.swift in Sources */,
 				CF33AD632A5027DE00564F9E /* TaskListViewController.swift in Sources */,
+				CFAB9B2F2A549AC500F36836 /* HalfHourTableViewCell.swift in Sources */,
 				CF33AD802A503F7F00564F9E /* NetworkService.swift in Sources */,
 				CF33AD652A5027E800564F9E /* TaskListPresenter.swift in Sources */,
 				CF33AD722A502D8100564F9E /* TaskDetailPresenter.swift in Sources */,
