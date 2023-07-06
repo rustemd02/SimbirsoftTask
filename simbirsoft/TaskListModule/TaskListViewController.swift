@@ -118,12 +118,19 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = cell else { return .init() }
             cell.taskTitle.text = task.name
             cell.timeStartLabel.text = presenter?.formatRowToTime(row: indexPath.row.description)
+            cell.accessoryType = .disclosureIndicator
             if indexPath.row % 2 == 0 {
                 cell.backgroundColor = #colorLiteral(red: 1, green: 0.9145376682, blue: 0.9278103709, alpha: 1)
-                cell.selectedBackgroundView?.backgroundColor = #colorLiteral(red: 1, green: 0.8799344897, blue: 0.8916209936, alpha: 1)
+                
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = #colorLiteral(red: 0.9209064245, green: 0.820227921, blue: 0.8314890265, alpha: 1)
+                cell.selectedBackgroundView = bgColorView
             } else {
                 cell.backgroundColor = #colorLiteral(red: 1, green: 0.8799344897, blue: 0.8916209936, alpha: 1)
-                cell.selectedBackgroundView?.backgroundColor = #colorLiteral(red: 1, green: 0.9145376682, blue: 0.9278103709, alpha: 1)
+                
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = #colorLiteral(red: 0.8715187907, green: 0.8044268489, blue: 0.8236843944, alpha: 1)
+                cell.selectedBackgroundView = bgColorView
             }
             tableView.reloadRows(at: [indexPath], with: .automatic)
             return cell
@@ -137,6 +144,7 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if let task = presenter?.getTaskByHour(indexpath: indexPath) {
             presenter?.presentDetailView(task: task)
         }
