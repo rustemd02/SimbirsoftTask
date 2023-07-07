@@ -22,7 +22,7 @@ class NewTaskInteractor {
 
 extension NewTaskInteractor: NewTaskInteractorProtocol {
     func ifNewTaskHasCollisions(newTaskStartTime: Date, newTaskFinishTime: Date, date: Date) -> Bool {
-        let tasks = NetworkService.shared.getTasksByDay(selectedDate: date)
+        let tasks = DatabaseService.shared.getTasksByDayFromRealm(selectedDate: date)
         for task in tasks {
             guard let taskStartTime = task.startDate, let taskFinishTime = task.finishDate else { return true }
             if taskStartTime <= newTaskFinishTime && taskFinishTime >= newTaskStartTime {
@@ -73,7 +73,7 @@ extension NewTaskInteractor: NewTaskInteractorProtocol {
         let task = Task()
         task.id = Int(arc4random_uniform(UInt32.max))
         task.name = title
-        task.taskDescription = description ?? ""
+        task.taskDescription = description ?? "У дела нет описания"
         task.dateStart = startTime.timeIntervalSince1970
         task.dateFinish = finishTime.timeIntervalSince1970
 

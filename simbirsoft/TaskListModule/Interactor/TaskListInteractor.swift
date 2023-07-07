@@ -17,6 +17,7 @@ protocol TaskListInteractorProtocol: AnyObject {
 class TaskListInteractor {
     weak var presenter: TaskListPresenterProtocol?
     private var networkService = NetworkService.shared
+    private var databaseService = DatabaseService.shared
     var tasksForSelectedDay: [Task] = []
    
     
@@ -48,8 +49,13 @@ extension TaskListInteractor: TaskListInteractorProtocol {
   
     
     func getTasksForSelectedDay(selectedDate: Date) -> [Task] {
-        tasksForSelectedDay = networkService.getTasksByDay(selectedDate: selectedDate)
+        if tasksForSelectedDay.isEmpty {
+            tasksForSelectedDay = networkService.loadFromJson(selectedDate: selectedDate)
+            return tasksForSelectedDay
+        }
+        tasksForSelectedDay = databaseService.getTasksByDayFromRealm(selectedDate: selectedDate)
         return tasksForSelectedDay
+
     }
     
     func getTaskByHour(indexpath: IndexPath) -> Task? {

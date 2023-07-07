@@ -12,7 +12,7 @@ class NetworkService {
     
     
     //TODO: на первом запуске json, потом уже с realm
-    func getTasksByDay(selectedDate: Date) -> [Task] {
+    func loadFromJson(selectedDate: Date) -> [Task] {
         let calendar = Calendar.current
         if let tasks = loadJson(filename: "tasks") {
             let filteredTasks = tasks.filter { task in

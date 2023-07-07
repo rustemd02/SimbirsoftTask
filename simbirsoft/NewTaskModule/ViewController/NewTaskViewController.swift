@@ -186,10 +186,13 @@ class NewTaskViewController: UIViewController {
     
     @objc
     func setTime(timeStart: Bool) {
+        guard let date = date else { return }
+        
         datePicker = self.newTaskTimeStartDatepicker
         if !timeStart {
             datePicker = self.newTaskTimeFinishDatepicker
         }
+        datePicker.setDate(date, animated: false)
         
         view.addSubview(datePickerBackgroundView)
         view.addSubview(datePicker)
@@ -243,24 +246,27 @@ class NewTaskViewController: UIViewController {
         guard let date = date else { return }
         
         if (!newTaskTitleTextfield.hasText || (newTaskTimeStartButton.title(for: .normal)?.elementsEqual("начало"))! || (newTaskTimeFinishButton.title(for: .normal)?.elementsEqual("конец"))!) {
-            showAlert(error: "Заполните все поля")
+            showAlert(title: "Ошибка", message: "Заполните все поля")
             return
         }
         if presenter?.ifNewTaskHasCollisions(startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, date: date) == true {
-            showAlert(error: "В указанное время у вас уже записано дело")
+            showAlert(title: "Ошибка", message: "В указанное время у вас уже записано дело")
             return
         }
         
-        //TODO: сохранение
         if presenter?.saveTask(title: newTaskTitleTextfield.text!, startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, description: description) == false {
-            showAlert(error: "Ошибка сохранения")
+            showAlert(title: "Ошибка", message: "Ошибка сохранения")
             return
         }
+        
+        showAlert(title: "Сохранено", message: "Ваше дело добавлено")
+        
+        //view.inputViewController?.dismiss(animated: true)
         
     }
     
-    func showAlert(error title: String) {
-        let alertController = UIAlertController(title: "Ошибка", message: title, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "ОК", style: .default) { _ in
             alertController.dismiss(animated: true, completion: nil)

@@ -24,7 +24,7 @@ class TaskListViewController: UIViewController {
     let datePickerBackgroundView = UIView()
     
     var selectedDate = Date.init()
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         let dateTitle = presenter?.getDateString(date: selectedDate)

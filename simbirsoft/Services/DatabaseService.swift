@@ -23,4 +23,20 @@ class DatabaseService {
         }
         return nil
     }
+    
+    func getTasksByDayFromRealm(selectedDate: Date) -> [Task] {
+        do {
+            let calendar = Calendar.current
+            let realm = try Realm()
+            let tasks = realm.objects(Task.self)
+            let filteredTasks = tasks.filter { task in
+                guard let startDate = task.startDate, let finishDate = task.finishDate else { return false }
+                return calendar.isDate(selectedDate, inSameDayAs: startDate) || calendar.isDate(selectedDate, inSameDayAs: finishDate)
+            }
+            return Array(filteredTasks)
+        } catch {
+            print(error)
+        }
+        return []
+    }
 }
