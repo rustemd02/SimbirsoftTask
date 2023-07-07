@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol NewTaskInteractorProtocol: AnyObject {
     func formatDateToCompact(date: Date) -> String
     func formatTimeToCompact(date: Date) -> String
     func ifNewTaskHasCollisions(newTaskStartTime: Date, newTaskFinishTime: Date, date: Date) -> Bool
+    func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool
     
 }
 
@@ -65,5 +67,20 @@ extension NewTaskInteractor: NewTaskInteractorProtocol {
             return dayString + "." + monthString
         }
         return "сегодня"
+    }
+    
+    func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool {
+        let task = Task()
+        task.id = Int(arc4random_uniform(UInt32.max))
+        task.name = title
+        task.taskDescription = description ?? ""
+        task.dateStart = startTime.timeIntervalSince1970
+        task.dateFinish = finishTime.timeIntervalSince1970
+
+        if let error = DatabaseService.shared.saveToRealm(object: task) {
+            print(error)
+            return false
+        }
+        return true
     }
 }

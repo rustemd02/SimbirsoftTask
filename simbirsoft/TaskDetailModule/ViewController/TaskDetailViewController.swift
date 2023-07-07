@@ -100,7 +100,7 @@ class TaskDetailViewController: UIViewController {
         }
         
         taskDescriptionBackgroundView.addSubview(taskDescriptionLabel)
-        taskDescriptionLabel.text = task.description
+        taskDescriptionLabel.text = task.taskDescription
         taskDescriptionLabel.numberOfLines = 0
         taskDescriptionLabel.snp.makeConstraints { make in
             make.leadingMargin.equalTo(taskDescriptionBackgroundView.snp.leadingMargin).offset(10)

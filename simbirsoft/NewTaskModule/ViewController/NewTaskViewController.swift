@@ -246,12 +246,16 @@ class NewTaskViewController: UIViewController {
             showAlert(error: "Заполните все поля")
             return
         }
-        if ((presenter?.ifNewTaskHasCollisions(startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, date: date)) == true) {
+        if presenter?.ifNewTaskHasCollisions(startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, date: date) == true {
             showAlert(error: "В указанное время у вас уже записано дело")
             return
         }
         
         //TODO: сохранение
+        if presenter?.saveTask(title: newTaskTitleTextfield.text!, startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, description: description) == false {
+            showAlert(error: "Ошибка сохранения")
+            return
+        }
         
     }
     

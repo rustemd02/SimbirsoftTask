@@ -11,6 +11,7 @@ protocol NewTaskPresenterProtocol: AnyObject {
     func formatDateToCompact(date: Date) -> String
     func formatTimeToCompact(date: Date) -> String
     func ifNewTaskHasCollisions(startTime: Date, finishTime: Date, date: Date) -> Bool
+    func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool
 
 }
 
@@ -38,6 +39,8 @@ extension NewTaskPresenter: NewTaskPresenterProtocol {
         return interactor.formatTimeToCompact(date: date)
     }
 
-    
+    func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool {
+        return interactor.saveTask(title: title, startTime: startTime, finishTime: finishTime, description: description)
+    }
     
 }
