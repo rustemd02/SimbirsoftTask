@@ -14,7 +14,7 @@
 		CF33AD312A50249D00564F9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD302A50249D00564F9E /* SceneDelegate.swift */; };
 		CF33AD392A50249D00564F9E /* simbirsoft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD372A50249D00564F9E /* simbirsoft.xcdatamodeld */; };
 		CF33AD3B2A50249E00564F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF33AD3A2A50249E00564F9E /* Assets.xcassets */; };
-		CF33AD492A50249F00564F9E /* simbirsoftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD482A50249F00564F9E /* simbirsoftTests.swift */; };
+		CF33AD492A50249F00564F9E /* simbirsoftInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD482A50249F00564F9E /* simbirsoftInteractorTests.swift */; };
 		CF33AD532A50249F00564F9E /* simbirsoftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD522A50249F00564F9E /* simbirsoftUITests.swift */; };
 		CF33AD552A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD542A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift */; };
 		CF33AD632A5027DE00564F9E /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33AD622A5027DE00564F9E /* TaskListViewController.swift */; };
@@ -38,6 +38,8 @@
 		CFAB9B402A56C64400F36836 /* NewTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B3F2A56C64400F36836 /* NewTaskRouter.swift */; };
 		CFAB9B422A56C64C00F36836 /* NewTaskModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B412A56C64C00F36836 /* NewTaskModuleBuilder.swift */; };
 		CFAB9B442A56FB0E00F36836 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B432A56FB0E00F36836 /* DatabaseService.swift */; };
+		CFAB9B4A2A5977C900F36836 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B492A5977C900F36836 /* MockNetworkService.swift */; };
+		CFAB9B4C2A5977DE00F36836 /* MockDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB9B4B2A5977DE00F36836 /* MockDatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,7 @@
 		CF33AD3A2A50249E00564F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF33AD3F2A50249E00564F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF33AD442A50249F00564F9E /* simbirsoftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simbirsoftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF33AD482A50249F00564F9E /* simbirsoftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftTests.swift; sourceTree = "<group>"; };
+		CF33AD482A50249F00564F9E /* simbirsoftInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftInteractorTests.swift; sourceTree = "<group>"; };
 		CF33AD4E2A50249F00564F9E /* simbirsoftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simbirsoftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF33AD522A50249F00564F9E /* simbirsoftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftUITests.swift; sourceTree = "<group>"; };
 		CF33AD542A50249F00564F9E /* simbirsoftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simbirsoftUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		CFAB9B3F2A56C64400F36836 /* NewTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskRouter.swift; sourceTree = "<group>"; };
 		CFAB9B412A56C64C00F36836 /* NewTaskModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModuleBuilder.swift; sourceTree = "<group>"; };
 		CFAB9B432A56FB0E00F36836 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		CFAB9B492A5977C900F36836 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		CFAB9B4B2A5977DE00F36836 /* MockDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseService.swift; sourceTree = "<group>"; };
 		D0F346A5DAA6C08AB4A8F3A9 /* Pods_simbirsoftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE171D3AEE38800EC7CC1271 /* Pods-simbirsoftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simbirsoftTests.release.xcconfig"; path = "Target Support Files/Pods-simbirsoftTests/Pods-simbirsoftTests.release.xcconfig"; sourceTree = "<group>"; };
 		E910A5593C925DE031F4813E /* Pods_simbirsoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simbirsoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +198,9 @@
 		CF33AD472A50249F00564F9E /* simbirsoftTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF33AD482A50249F00564F9E /* simbirsoftTests.swift */,
+				CF33AD482A50249F00564F9E /* simbirsoftInteractorTests.swift */,
+				CFAB9B492A5977C900F36836 /* MockNetworkService.swift */,
+				CFAB9B4B2A5977DE00F36836 /* MockDatabaseService.swift */,
 			);
 			path = simbirsoftTests;
 			sourceTree = "<group>";
@@ -644,7 +650,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF33AD492A50249F00564F9E /* simbirsoftTests.swift in Sources */,
+				CFAB9B4C2A5977DE00F36836 /* MockDatabaseService.swift in Sources */,
+				CFAB9B4A2A5977C900F36836 /* MockNetworkService.swift in Sources */,
+				CF33AD492A50249F00564F9E /* simbirsoftInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

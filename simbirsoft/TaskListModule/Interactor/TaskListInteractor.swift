@@ -16,11 +16,15 @@ protocol TaskListInteractorProtocol: AnyObject {
 
 class TaskListInteractor {
     weak var presenter: TaskListPresenterProtocol?
-    private var networkService = NetworkService.shared
-    private var databaseService = DatabaseService.shared
-    var tasksForSelectedDay: [Task] = []
-   
+    private var networkService: NetworkServiceProtocol
+    private var databaseService: DatabaseServiceProtocol
+    private var tasksForSelectedDay: [Task] = []
     
+    
+    init(networkService: NetworkServiceProtocol = NetworkService.shared, databaseService: DatabaseServiceProtocol = DatabaseService.shared) {
+        self.networkService = networkService
+        self.databaseService = databaseService
+    }
 }
 
 extension TaskListInteractor: TaskListInteractorProtocol {
@@ -62,7 +66,6 @@ extension TaskListInteractor: TaskListInteractorProtocol {
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        //dateFormatter.timeZone = TimeZone(identifier: "UTC")
         guard let date = dateFormatter.date(from: formatRowToTime(row: indexpath.row.description)) else { return nil }
         let currentHour = calendar.component(.hour, from: date)
         for task in tasksForSelectedDay {

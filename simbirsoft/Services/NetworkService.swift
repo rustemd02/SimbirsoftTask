@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NetworkService {
+protocol NetworkServiceProtocol {
+    func loadFromJson(selectedDate: Date) -> [Task]
+}
+
+class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
     
     

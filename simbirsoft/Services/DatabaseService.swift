@@ -8,7 +8,13 @@
 import Foundation
 import RealmSwift
 
-class DatabaseService {
+protocol DatabaseServiceProtocol {
+    func saveToRealm<T: Object>(object: T) -> Error?
+    func getTasksByDayFromRealm(selectedDate: Date) -> [Task]
+    func isEmpty() -> Bool
+}
+
+class DatabaseService: DatabaseServiceProtocol {
     static let shared = DatabaseService()
     
     func saveToRealm<T: Object>(object: T) -> Error? {
