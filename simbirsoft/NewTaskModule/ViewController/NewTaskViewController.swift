@@ -254,20 +254,23 @@ class NewTaskViewController: UIViewController {
             showAlert(title: "Ошибка", message: "Заполните все поля")
             return
         }
+        
+        if presenter?.ifTasksFinishesBeforeStarts(newTaskStartTime: newTaskTimeStartDatepicker.date, newTaskFinishTime: newTaskTimeFinishDatepicker.date) == true {
+            showAlert(title: "Ошибка", message: "Время окончания дела должно быть позже, чем время начала")
+        }
+        
         if presenter?.ifNewTaskHasCollisions(startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, date: date) == true {
             showAlert(title: "Ошибка", message: "В указанное время у вас уже записано дело")
             return
         }
         
-        if presenter?.saveTask(title: newTaskTitleTextfield.text!, startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, description: description) == false {
+        if presenter?.saveTask(title: newTaskTitleTextfield.text!, startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, description: newTaskDescriptionTextfield.text) == false {
             showAlert(title: "Ошибка", message: "Ошибка сохранения")
             return
         }
         
         showAlert(title: "Сохранено", message: "Ваше дело добавлено")
         delegate?.reloadTableView()
-        //view.inputViewController?.dismiss(animated: true)
-        
     }
     
     func showAlert(title: String, message: String) {

@@ -12,6 +12,7 @@ protocol NewTaskInteractorProtocol: AnyObject {
     func formatDateToCompact(date: Date) -> String
     func formatTimeToCompact(date: Date) -> String
     func ifNewTaskHasCollisions(newTaskStartTime: Date, newTaskFinishTime: Date, date: Date) -> Bool
+    func ifTasksFinishesBeforeStarts(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool
     func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool
     
 }
@@ -33,7 +34,12 @@ extension NewTaskInteractor: NewTaskInteractorProtocol {
         return false
     }
 
-    
+    func ifTasksFinishesBeforeStarts(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool {
+        if newTaskStartTime > newTaskFinishTime {
+            return true
+        }
+        return false
+    }
  
     func formatTimeToCompact(date: Date) -> String {
         let dateFormatter = DateFormatter()
