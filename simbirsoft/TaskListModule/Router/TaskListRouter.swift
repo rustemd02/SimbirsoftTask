@@ -24,6 +24,7 @@ class TaskListRouter: TaskListRouterProtocol {
     func createNewTask(for date: Date) {
         let vc = NewTaskModuleBuilder.build()
         vc.date = date
+        vc.delegate = view
         view?.present(vc, animated: true)
     }
 }

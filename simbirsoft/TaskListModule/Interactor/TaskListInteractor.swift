@@ -49,7 +49,7 @@ extension TaskListInteractor: TaskListInteractorProtocol {
   
     
     func getTasksForSelectedDay(selectedDate: Date) -> [Task] {
-        if tasksForSelectedDay.isEmpty {
+        if tasksForSelectedDay.isEmpty && databaseService.isEmpty() {
             tasksForSelectedDay = networkService.loadFromJson(selectedDate: selectedDate)
             return tasksForSelectedDay
         }

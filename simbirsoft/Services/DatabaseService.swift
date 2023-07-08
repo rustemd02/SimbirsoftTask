@@ -39,4 +39,15 @@ class DatabaseService {
         }
         return []
     }
+    
+    func isEmpty() -> Bool {
+        do {
+            let realm = try Realm()
+            let tasks = realm.objects(Task.self)
+            return tasks.isEmpty
+        } catch {
+            print(error)
+        }
+        return true
+    }
 }

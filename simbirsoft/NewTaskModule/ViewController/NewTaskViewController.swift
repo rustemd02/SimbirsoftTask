@@ -8,12 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol NewTaskViewControllerDelegate: AnyObject {
+    func reloadTableView()
+}
+
 protocol NewTaskViewControllerProtocol: AnyObject {
     
 }
 
 class NewTaskViewController: UIViewController {
     var presenter: NewTaskPresenterProtocol?
+    weak var delegate: NewTaskViewControllerDelegate?
     
     let taskCreationLabel = UILabel()
     
@@ -260,7 +265,7 @@ class NewTaskViewController: UIViewController {
         }
         
         showAlert(title: "Сохранено", message: "Ваше дело добавлено")
-        
+        delegate?.reloadTableView()
         //view.inputViewController?.dismiss(animated: true)
         
     }
