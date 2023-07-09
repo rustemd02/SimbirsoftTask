@@ -12,6 +12,7 @@ protocol NewTaskPresenterProtocol: AnyObject {
     func formatTimeToCompact(date: Date) -> String
     func ifNewTaskHasCollisions(startTime: Date, finishTime: Date, date: Date) -> Bool
     func ifTasksFinishesBeforeStarts(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool
+    func ifTaskLastsLessThanHour(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool
     func saveTask(title: String, startTime: Date, finishTime: Date, description: String?) -> Bool
 
 }
@@ -28,6 +29,10 @@ class NewTaskPresenter {
 }
 
 extension NewTaskPresenter: NewTaskPresenterProtocol {
+    func ifTaskLastsLessThanHour(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool {
+        return interactor.ifTaskLastsLessThanHour(newTaskStartTime: newTaskStartTime, newTaskFinishTime: newTaskFinishTime)
+    }
+    
     func ifTasksFinishesBeforeStarts(newTaskStartTime: Date, newTaskFinishTime: Date) -> Bool {
         return interactor.ifTasksFinishesBeforeStarts(newTaskStartTime: newTaskStartTime, newTaskFinishTime: newTaskFinishTime)
     }

@@ -198,7 +198,6 @@ class NewTaskViewController: UIViewController {
             datePicker = self.newTaskTimeFinishDatepicker
         }
         datePicker.setDate(date, animated: false)
-        
         view.addSubview(datePickerBackgroundView)
         view.addSubview(datePicker)
         view.addSubview(toolbar)
@@ -257,6 +256,12 @@ class NewTaskViewController: UIViewController {
         
         if presenter?.ifTasksFinishesBeforeStarts(newTaskStartTime: newTaskTimeStartDatepicker.date, newTaskFinishTime: newTaskTimeFinishDatepicker.date) == true {
             showAlert(title: "Ошибка", message: "Время окончания дела должно быть позже, чем время начала")
+            return
+        }
+        
+        if presenter?.ifTaskLastsLessThanHour(newTaskStartTime: newTaskTimeStartDatepicker.date, newTaskFinishTime: newTaskTimeFinishDatepicker.date) == true {
+            showAlert(title: "Ошибка", message: "Дело должно длиться не менее 1 часа")
+            return
         }
         
         if presenter?.ifNewTaskHasCollisions(startTime: newTaskTimeStartDatepicker.date, finishTime: newTaskTimeFinishDatepicker.date, date: date) == true {
